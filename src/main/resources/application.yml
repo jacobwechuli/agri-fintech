@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: loan-management-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/agri_fintech
+    username: jacob
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
