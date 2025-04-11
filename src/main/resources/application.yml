@@ -3,16 +3,36 @@ spring:
     name: loan-management-service
   datasource:
     url: jdbc:postgresql://localhost:5432/agri_fintech
-    username: jacob
-    password: 12345
+    username: postgres
+    password: Wechuli2001
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     show-sql: true
     properties:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
+jwt:
+  secret: yourSuperSecretKeyThatIsLongAndRandomAndAtLeast256BitsLongChangeThisNow
+  expiration:
+    ms: 86400000 # 24 hours in milliseconds
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
+      hibernate:
+        SQL: debug
+#        web:
+#          servlet:
+#            DispatcherServlet: trace
+gcp:
+  vision:
+    credentials: classpath:gcp-key.json
+
+
+
 
